@@ -44,8 +44,15 @@ function init() {
   if (!reduce) {
     lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     window.__lenis = lenis;
-    const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
-    requestAnimationFrame(raf);
+    // One clock for smooth scroll and the GSAP pins: two separate loops drift a frame apart and pinned or
+    // scrubbed sections shake.
+    if (window.gsap) {
+      window.gsap.ticker.add((time) => lenis.raf(time * 1000));
+      window.gsap.ticker.lagSmoothing(0);
+    } else {
+      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+      requestAnimationFrame(raf);
+    }
   }
   const progress = () => {
     const r = hero.getBoundingClientRect();
@@ -141,7 +148,9 @@ function init() {
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 50);
+    // Tight near/far planes: the book sits about 4 units away, so depth precision stays high and the
+    // stacked boards and page blocks never fight over the same pixels.
+    const camera = new THREE.PerspectiveCamera(26, 1, 1, 30);
     const loader = new THREE.TextureLoader();
     const maxAniso = renderer.capabilities.getMaxAnisotropy();
     const covers = {};
@@ -251,7 +260,9 @@ function init() {
       const ease = s * s * (3 - 2 * s);
       const T = thick;
       const inner = T - 0.028, slabT = inner / N;
-      spine.scale.z = T; spine.position.set(-W / 2 - 0.0, 0, 0);
+      // The spine sits just inside the boards and just outside the page blocks, so no two faces share a plane
+      // (shared planes flicker as the book turns).
+      spine.scale.z = T - 0.004; spine.position.set(-W / 2 - 0.0015, 0, 0);
       const spread = 1 + ease * 7;
       parts.forEach((m, k) => {
         let z;

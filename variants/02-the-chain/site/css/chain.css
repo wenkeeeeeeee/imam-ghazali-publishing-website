@@ -186,3 +186,8 @@ main > section.hero { display: block; position: relative; height: 400vh; height:
   .lead-p { margin-bottom: 12px; }
   .stage-ar { font-size: 26px; }
 }
+/* Smooth-scroll base rules (Lenis): native smooth scrolling and scroll anchoring off while it drives the page. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; overflow-anchor: none; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
