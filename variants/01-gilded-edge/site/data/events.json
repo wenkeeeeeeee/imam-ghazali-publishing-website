@@ -1,0 +1,21 @@
+[
+  {
+    "id": "divine-reports-intensive",
+    "title": "The Niche of Light: The Divine Reports (Mishkat al-Anwar)",
+    "kind": "One-Day Intensive",
+    "subtitle": "Compiled by Ibn al-ʿArabi",
+    "teacher": "Dr Ali Hussain (USA)",
+    "date": "2026-11-21",
+    "when": "Saturday 21 November, 11am–5pm",
+    "where": "MSABA Hall, Masjid Saidina Abu Bakar As-Siddiq, Bangsar, Kuala Lumpur",
+    "points": ["A full reading of the text", "Certificate of completion", "60 seats left"],
+    "book": "divine-reports-mishkat-al-anwar",
+    "register": "https://imamghazali.my/divine",
+    "upcoming": true
+  },
+  { "id": "hamzah-maqbul", "title": "April events with Hamzah W. Maqbul (USA)", "kind": "Talks", "upcoming": false },
+  { "id": "bukhari-recital", "title": "Mukhtasar Sahih al-Bukhari Recital", "kind": "Recital", "upcoming": false },
+  { "id": "raya-open-house", "title": "IGP-Mukha Raya Open House & Selawat Sing-A-Long", "kind": "Gathering", "upcoming": false },
+  { "id": "malcolm-x", "title": "Malcolm X: The Wali of America", "kind": "Talk", "upcoming": false },
+  { "id": "healing-sick", "title": "Healing the Spiritually Sick", "kind": "Class", "upcoming": false }
+]

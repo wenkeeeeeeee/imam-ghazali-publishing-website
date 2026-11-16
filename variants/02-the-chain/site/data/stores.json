@@ -1,0 +1,8 @@
+{
+  "note": "Also stocked by these booksellers [client to confirm].",
+  "groups": [
+    { "name": "imamghazali.my", "outlets": [ { "name": "Online bookstore, shipping in Malaysia", "address": "Prices in RM, checkout on imamghazali.my", "mapUrl": "" } ] },
+    { "name": "Ilham Books", "outlets": [ { "name": "Selected IGP titles [client to confirm]", "address": "", "mapUrl": "" } ] },
+    { "name": "Opentrolley", "outlets": [ { "name": "Selected IGP titles online [client to confirm]", "address": "", "mapUrl": "" } ] }
+  ]
+}

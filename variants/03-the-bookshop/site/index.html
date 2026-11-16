@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>IGP's bookstore | Imam Ghazali Publishing Malaysia</title>
+<meta name="description" content="Welcome to IGP's bookstore: 101 Islamic titles in English, Bahasa Melayu and Arabic, chosen by our staff and teachers. From RM25, with 9 free ebooks. Since 2007.">
+<meta property="og:title" content="IGP's bookstore | Imam Ghazali Publishing Malaysia">
+<meta property="og:description" content="101 titles chosen by our staff and teachers. From RM25, 9 free ebooks.">
+<meta property="og:image" content="https://imam-ghazali-publishing-website.vercel.app/variants/03-the-bookshop/site/assets/og.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preload" href="assets/fonts/boska-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="js/gl-guard.js"></script>
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/lenis.min.js" defer></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/pages.js"></script>
+<script type="module" src="js/shelf.js"></script>
+<script type="module" src="js/home.js"></script>
+<script type="module" src="js/ui.js"></script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<header class="head" data-head>
+  <div class="head-row">
+    <a class="logo" href="index.html" aria-label="Imam Ghazali Publishing, home"><img src="assets/img/logo.png" alt="" width="80" height="48"><span class="logo-word"><b>Imam Ghazali</b><span>Publishing · MY</span></span></a>
+    <form class="find" action="shop.html" method="get" role="search">
+      <svg class="find-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+      <label class="sr-only" for="find-q">Search the bookstore</label>
+      <input id="find-q" name="q" type="search" placeholder="Search 101 titles" autocomplete="off">
+      <span class="find-hint" aria-hidden="true">al-Ghazali, Sīrah, Rajab…</span>
+      <button type="submit" class="find-go" aria-label="Search">Search</button>
+    </form>
+    <nav class="nav" data-nav aria-label="Main"><a href="shop.html">Bookstore</a><a href="ebooks.html">Free ebooks</a><a href="classes.html">Classes</a><a href="about.html">About</a></nav>
+    <button class="bag" type="button" data-cart-open aria-label="Open book bag">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M6 9h16l-1.2 14.2a1 1 0 0 1-1 .8H8.2a1 1 0 0 1-1-.8z"/><path d="M10.5 11V7.5a3.5 3.5 0 0 1 7 0V11"/><path class="bag-leaf" d="M14 13.5c2.6 1 3.4 3.4 2.2 6-2.6-.9-3.4-3.4-2.2-6z"/></svg>
+      <span class="bag-t">Book bag</span><span class="bag-n" data-cart-count>0</span>
+    </button>
+    <button class="menu-btn" type="button" data-menu-btn aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
+  </div>
+  <nav class="subjects" aria-label="Subjects">
+    <a href="shop.html?cat=Qur'an">Qur'an</a><a href="shop.html?cat=Hadith">Hadith</a><a href="shop.html?cat=S%C4%ABrah%20%26%20the%20Prophet%20%EF%B7%BA">Sīrah &amp; the Prophet ﷺ</a><a href="shop.html?cat=Spirituality%20%26%20Belief">Spirituality &amp; Belief</a><a href="shop.html?cat=Salawat%20%26%20Poetry">Salawat &amp; Poetry</a><a href="shop.html?cat=Family%20%26%20Character">Family &amp; Character</a><a href="shop.html?cat=Life%20%26%20Seasons">Life &amp; Seasons</a><a href="shop.html?lang=Bahasa%20Melayu">Bahasa Melayu</a><a href="ebooks.html">Free ebooks</a>
+  </nav>
+</header>
+<main id="main">
+<section class="gather" data-gather aria-label="Welcome to IGP's bookstore">
+  <div class="gather-stage" data-stage>
+    <div class="glow" data-glow aria-hidden="true"></div>
+    <canvas class="gather-gl" data-gl aria-hidden="true"></canvas>
+    <div class="gather-copy" data-copy>
+      <h1 class="welcome"><span class="w-line">Welcome to</span> <span class="w-line">IGP's bookstore.</span></h1>
+      <svg class="ribbon" data-ribbon aria-hidden="true"><path d=""/></svg>
+      <div class="gather-side">
+        <p class="lede">101 titles chosen by our staff and teachers. From RM25, 9&nbsp;free ebooks.</p>
+        <div class="gather-acts">
+          <a class="btn" href="#heart">What is your heart carrying?</a>
+          <a class="link-arrow" href="shop.html">Browse all 101 <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="gather-facts">Since 2007 · English, Bahasa Melayu &amp; Arabic · Checkout in RM</p>
+      </div>
+    </div>
+    <div class="wall" data-wall></div>
+    <aside class="feature" data-feature aria-live="polite"></aside>
+  </div>
+</section>
+<div class="after-hero">
+
+<section class="sec month" id="shelf" aria-labelledby="month-h">
+  <div class="sec-head">
+    <h2 class="sec-h" id="month-h">On the shelf this month</h2>
+    <p class="sec-line">Prices in RM, from RM25. Add to your book bag, then check out on imamghazali.my or send the list on WhatsApp.</p>
+  </div>
+  <div class="month-rail" data-month-rail></div>
+  <div class="month-premium">
+    <div class="mp-copy">
+      <h3>Premium editions</h3>
+      <p>Gold-illuminated, hardback and leather. Classical works in English for the first time: the Maghazi of Musa ibn ʿUqbah, the earliest available work of Sīrah in existence, and Mukhtasar Sahih al-Bukhari.</p>
+    </div>
+    <div class="mp-rail" data-premium-rail></div>
+  </div>
+</section>
+
+<section class="sec heart" id="heart" aria-labelledby="heart-h">
+  <div class="heart-in">
+    <div class="heart-ask">
+      <h2 class="sec-h" id="heart-h">What is your heart carrying?</h2>
+      <p class="sec-line">Choose what sits heaviest today. Our teachers' picks slide off the shelf for you.</p>
+      <div class="heart-chips" role="radiogroup" aria-label="What is your heart carrying?" data-heart-chips></div>
+    </div>
+    <div class="heart-out" data-heart-out aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="season" id="season" aria-labelledby="season-h" data-season>
+  <div class="season-stage" data-season-stage>
+    <svg class="ring" data-ring aria-hidden="true"></svg>
+    <div class="season-copy">
+      <h2 class="sec-h" id="season-h">The season shelf</h2>
+      <div class="season-card" data-season-card aria-live="polite"></div>
+    </div>
+    <ol class="season-steps" data-season-steps aria-hidden="true"></ol>
+  </div>
+</section>
+
+<section class="sec spreads" aria-labelledby="spreads-h">
+  <div class="sec-head">
+    <h2 class="sec-h" id="spreads-h">Arabic beside English</h2>
+    <p class="sec-line">The IGP bilingual edition: the Arabic set in clear script, the translation facing it, notes beneath. Reviving, translating &amp; beautifully producing works of scholarship.</p>
+  </div>
+  <div class="spread-row" data-spreads>
+    <figure class="spread s1"><img src="assets/books/maghazi-of-sayyiduna-muhammad-gold-premium-5.webp" alt="Inside the Gold Premium Maghazi: Arabic text framed in gold" width="900" height="900" loading="lazy"><figcaption><b>The Maghazi of Sayyiduna Muhammad ﷺ</b> Gold-illuminated edition, RM220. The earliest available work of Sīrah, in English for the first time.</figcaption></figure>
+    <figure class="spread s2"><img src="assets/books/maghazi-of-sayyiduna-muhammad-gold-premium-2.webp" alt="The Maghazi open, its gilt page edges and Arabic text" width="900" height="900" loading="lazy"><figcaption><b>Gilt edges</b> Every page edge in gold.</figcaption></figure>
+    <figure class="spread s3"><img src="assets/books/sirah-of-the-prophet-3.webp" alt="The Sīrah of the Prophet open at Part III, The Meccan Era" width="900" height="900" loading="lazy"><figcaption><b>The Sīrah of the Prophet ﷺ</b> Dr Yasir Qadhi, hardback, RM125.</figcaption></figure>
+    <figure class="spread s4"><img src="assets/books/burdah-of-busiri-leather-pu-case-3.webp" alt="The Burdah of Imam al-Busiri, an Arabic page beside the leather case" width="900" height="900" loading="lazy"><figcaption><b>The Burdah</b> Imam al-Busiri, in a leather case, RM160.</figcaption></figure>
+  </div>
+  <ul class="firsts">
+    <li><b>In English for the first time in history</b> Mukhtasar Sahih al-Bukhari, compiled by Imam Ibn Abi Jamrah. RM200.</li>
+    <li><b>Lost for over 400 years</b> The Maghazi manuscripts, found in the National Library of Tunisia.</li>
+    <li><b>Pre-order now</b> al-Shama'il al-Muhammadiyya of Imam al-Tirmidhi, hardback RM200, December 2026 batch.</li>
+  </ul>
+</section>
+
+<section class="sec decks" aria-labelledby="bm-h">
+  <div class="deck-block">
+    <div class="deck-copy">
+      <h2 class="sec-h" id="bm-h">Buku Bahasa Melayu</h2>
+      <p class="sec-line">Sepuluh judul dalam Bahasa Melayu, dari RM25. Ten titles in Malay, from Pembukaan Tanpa Akhir to Penawar Lupa.</p>
+      <a class="link-arrow" href="shop.html?lang=Bahasa%20Melayu">Lihat rak BM <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="deck" data-deck="bm"></div>
+  </div>
+  <div class="deck-block is-flip">
+    <div class="deck-copy">
+      <h2 class="sec-h" id="free-h">Nine free ebooks</h2>
+      <p class="sec-line">Free to download from imamghazali.my: the Burdah, Morning &amp; Evening invocations, an introduction to creed and more.</p>
+      <a class="link-arrow" href="ebooks.html">All free ebooks <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="deck" data-deck="free"></div>
+  </div>
+</section>
+
+<section class="sec classes" aria-labelledby="class-h">
+  <div class="class-card" data-class></div>
+</section>
+
+<section class="sec proof" aria-labelledby="proof-h">
+  <figure class="review">
+    <span class="review-book" data-review-book></span>
+    <blockquote>“The Arabic is based on the best edition recommended by scholars in Egypt. The English translation is masterful. The designs are beautiful and the footnotes add a lot to text. It's a must-have.”</blockquote>
+    <figcaption>Review of al-Shama'il al-Muhammadiyya <span class="tbc">[reviewer name to confirm]</span></figcaption>
+  </figure>
+  <div class="since">
+    <h2 class="sec-h" id="proof-h">Since 2007</h2>
+    <p class="sec-line">Since 2007, we have led the effort to revive the vast and rich Islamic scholarly tradition. Now in Malaysia as IGP MY, SSM 202401032039 (1577888-V).</p>
+    <dl class="counts">
+      <div><dt>Publishing since</dt><dd data-count="2007">2007</dd></div>
+      <div><dt>Titles, priced in RM</dt><dd data-count="101">101</dd></div>
+      <div><dt>In Bahasa Melayu</dt><dd data-count="10">10</dd></div>
+      <div><dt>Free ebooks</dt><dd data-count="9">9</dd></div>
+    </dl>
+    <div class="names">
+      <p><b>Classical authors</b> Musa ibn ʿUqbah · Imam al-Tirmidhi · Imam al-Ghazali · Imam al-Nawawi · Imam al-Busiri · Qadi ʿIyad · Ibn Abi Jamrah</p>
+      <p><b>Living teachers</b> Habib Umar bin Hafiz · Dr Yasir Qadhi · Shaykh Hamzah Abdul-Malik · Shaykh Dr Thaika Shu'aib Alim</p>
+      <p><b>Translators</b> Shabbir Hassan · Rayyan Shaikh</p>
+    </div>
+    <div class="stock">
+      <h3>Where to buy</h3>
+      <ul class="stock-list" data-stores></ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq-sec" aria-labelledby="faq-h">
+  <div class="sec-head">
+    <h2 class="sec-h" id="faq-h">Questions</h2>
+    <p class="sec-line">Anything else? <a data-wa="Salam {brand}, a question: " href="#" target="_blank" rel="noopener">Ask us on WhatsApp</a>.</p>
+  </div>
+  <div class="faq">
+    <details><summary>How do I order?</summary><p>Add books to your book bag and check out in RM on imamghazali.my, or send the list to us on WhatsApp <span data-site="whatsapp"></span>.</p></details>
+    <details><summary>Do you ship within Malaysia, and how fast?</summary><p><span class="tbc">[client to confirm delivery fees and times]</span></p></details>
+    <details><summary>Do you ship to Singapore and Brunei?</summary><p>The checkout on imamghazali.my lists about 28 countries <span class="tbc">[client to confirm fees]</span>.</p></details>
+    <details><summary>Can I pay by FPX or DuitNow?</summary><p><span class="tbc">[client to confirm payment methods]</span></p></details>
+    <details><summary>Is the Arabic included?</summary><p>Many editions are bilingual, Arabic beside English. Each book page says so.</p></details>
+    <details><summary>Is there a Malay edition?</summary><p>Ten titles are in Bahasa Melayu. <a href="shop.html?lang=Bahasa%20Melayu">See the BM shelf</a>.</p></details>
+    <details><summary>When does the Shama'il pre-order ship?</summary><p>With the December 2026 print batch. <a href="contact.html?for=Pre-order%20al-Shama'il%20(December%202026%20batch)">Pre-order on WhatsApp</a>.</p></details>
+    <details><summary>Do you sell to masjids and bookshops?</summary><p>Wholesale terms <span class="tbc">[client to confirm]</span>. <a href="contact.html?for=Wholesale%20for%20a%20masjid%20or%20bookshop">Ask us</a>.</p></details>
+  </div>
+</section>
+</div>
+
+</main>
+<footer class="foot">
+  <div class="foot-top">
+    <p class="foot-big">Reviving, translating &amp; beautifully producing works of scholarship.</p>
+    <form class="find find-foot" action="shop.html" method="get" role="search"><label class="sr-only" for="foot-q">Search the bookstore</label><input id="foot-q" name="q" type="search" placeholder="Search 101 titles" autocomplete="off"><button type="submit" class="find-go">Search</button></form>
+  </div>
+  <div class="foot-cols">
+    <div><img class="foot-logo" src="assets/img/logo.png" alt="Imam Ghazali Publishing" width="96" height="58" loading="lazy"><p><span data-site="since"></span></p></div>
+    <div><h2>Bookstore</h2><ul>
+      <li><a href="shop.html">All 101 titles</a></li>
+      <li><a href="shop.html?cat=Qur'an">Qur'an</a></li>
+      <li><a href="shop.html?cat=Hadith">Hadith</a></li>
+      <li><a href="shop.html?cat=S%C4%ABrah%20%26%20the%20Prophet%20%EF%B7%BA">Sīrah &amp; the Prophet ﷺ</a></li>
+      <li><a href="shop.html?cat=Spirituality%20%26%20Belief">Spirituality &amp; Belief</a></li>
+      <li><a href="shop.html?lang=Bahasa%20Melayu">Buku Bahasa Melayu</a></li>
+      <li><a href="ebooks.html">Free ebooks</a></li>
+    </ul></div>
+    <div><h2>IGP MY</h2><ul><li><a href="about.html">About &amp; how a book is made</a></li><li><a href="classes.html">Classes &amp; events</a></li><li><a href="contact.html">Contact &amp; where to buy</a></li><li><a href="contact.html?for=Wholesale%20for%20a%20masjid%20or%20bookshop">Wholesale</a></li></ul></div>
+    <div><h2>Talk to us</h2><ul>
+      <li><a data-wa="Salam {brand}, " href="#" target="_blank" rel="noopener">WhatsApp <span data-site="whatsapp"></span></a></li>
+      <li><a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram @imamghazali.my</a></li>
+      <li><a data-shop="/collections/bookstore" href="#" target="_blank" rel="noopener">Checkout on imamghazali.my</a></li>
+    </ul></div>
+  </div>
+  <p class="foot-fine">&copy; <span data-site="brand">Imam Ghazali Publishing</span> · <span data-site="company"></span> · <span data-site="address"></span> · Prices in RM</p>
+</footer>
+</body>
+</html>

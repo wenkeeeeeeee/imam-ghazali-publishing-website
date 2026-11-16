@@ -1,0 +1,22 @@
+{
+  "brand": "Imam Ghazali Publishing",
+  "short": "IGP MY",
+  "tagline": "Reviving, translating, & beautifully producing works of scholarship.",
+  "since": "Since 2007, we have led the effort to revive the vast and rich Islamic scholarly tradition.",
+  "currency": "RM",
+  "whatsapp": { "intl": "60000000000", "display": "[client to confirm WhatsApp number]" },
+  "email": "[client to confirm email]",
+  "address": "Kuala Lumpur, Malaysia [client to confirm address]",
+  "company": "IGP MY · SSM 202401032039 (1577888-V)",
+  "hours": "[client to confirm hours]",
+  "shop": { "name": "imamghazali.my", "url": "https://imamghazali.my", "cartBase": "https://imamghazali.my/cart/" },
+  "marketplace": { "name": "imamghazali.my", "url": "https://imamghazali.my/collections/bookstore" },
+  "socials": {
+    "instagram": "https://www.instagram.com/imamghazali.my/",
+    "instagramGlobal": "https://www.instagram.com/imamghazalipublishing/",
+    "facebook": "",
+    "tiktok": ""
+  },
+  "quotePurposes": ["Pre-order al-Shama'il (December 2026 batch)", "Request a title", "Save a seat at a class", "Wholesale for a masjid or bookshop", "Something else"],
+  "storageKey": "igp-my-book-bag-v1"
+}

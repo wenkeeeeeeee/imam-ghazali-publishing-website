@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Imam Ghazali Publishing | The chain of Islamic scholarship, in English & BM</title>
+<meta name="description" content="Imam Ghazali Publishing (IGP MY): from the 8th century to today, classical Islamic books in English, Bahasa Melayu and Arabic. Since 2007. From RM25, from Kuala Lumpur.">
+<meta property="og:title" content="Imam Ghazali Publishing | The chain of Islamic scholarship">
+<meta property="og:description" content="From the 8th century to today, in English and Bahasa Melayu. Since 2007.">
+<meta property="og:image" content="https://imam-ghazali-publishing-website.vercel.app/variants/02-the-chain/site/assets/og.jpg">
+<meta name="theme-color" content="#0B1F24">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preload" href="assets/fonts/marcellus-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/hero/maghazi.jpg" as="image">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/chain.css">
+<link rel="stylesheet" href="css/body.css">
+<script src="js/gl-guard.js"></script>
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/pages.js"></script>
+<script type="module" src="js/hero.js"></script>
+<script type="module" src="js/home.js"></script>
+<script type="module" src="js/ui.js"></script>
+</head>
+<body data-page="home" class="chain">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hd" data-hd>
+  <div class="hd-row">
+    <nav class="hd-subjects" data-nav aria-label="Subjects">
+      <a href="shop.html?cat=S%C4%ABrah%20%26%20the%20Prophet%20%EF%B7%BA">Sīrah</a>
+      <a href="shop.html?cat=Hadith">Hadith</a>
+      <a href="shop.html?cat=Spirituality%20%26%20Belief">Spirituality</a>
+      <a href="shop.html?cat=Qur'an">Qur'an</a>
+      <a href="shop.html?lang=Bahasa%20Melayu" lang="ms">Buku BM</a>
+      <a href="classes.html">Classes</a>
+    </nav>
+    <button class="hd-menu" type="button" data-menu-btn aria-expanded="false" aria-label="Subjects menu"><span></span><span></span></button>
+    <a class="hd-logo" href="index.html" data-logo><img src="assets/img/logo.png" alt="Imam Ghazali Publishing" width="973" height="587"></a>
+    <div class="hd-actions">
+      <a class="hd-search" href="shop.html" aria-label="Search 101 titles">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 20.5 20.5"/></svg><span>Search</span>
+      </a>
+      <button class="hd-bag" type="button" data-cart-open aria-label="Open book bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="hd-bag-l">Book bag</span><span class="hd-bag-n" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+  <!-- The century bar: one segment per chapter of the hero; later it keeps the reader's place through the catalogue. -->
+  <ol class="cbar" data-cbar aria-label="Centuries">
+    <li><button type="button" data-seg="0"><span class="cbar-t">8th century</span><i></i></button></li>
+    <li><button type="button" data-seg="1"><span class="cbar-t">9th century</span><i></i></button></li>
+    <li><button type="button" data-seg="2"><span class="cbar-t">12th century</span><i></i></button></li>
+    <li><button type="button" data-seg="3"><span class="cbar-t">13th century</span><i></i></button></li>
+    <li><button type="button" data-seg="4"><span class="cbar-t">Today</span><i></i></button></li>
+  </ol>
+</header>
+
+<main id="main">
+<!--
+  Hero: one book holds the stage while the centuries change behind it.
+  Dates are death years CE, TO BE CHECKED against each book's introduction:
+    Musa ibn ʿUqbah 758 (141 AH, Madinah) · al-Tirmidhi 892 (279 AH, Tirmidh) · al-Ghazali 1111 (505 AH, Tus)
+    al-Nawawi 1277 (676 AH, Nawa) · Habib Umar bin Hafiz, living (Tarim).
+-->
+<section class="hero" data-hero aria-label="From the 8th century to today">
+  <div class="stage" data-stage>
+    <div class="stage-bg" aria-hidden="true"></div>
+    <div class="stage-year" aria-hidden="true"><span data-year>758</span></div>
+
+    <img class="stage-still" src="assets/hero/maghazi.jpg" alt="" data-still width="900" height="1340">
+    <canvas class="stage-gl" data-gl aria-hidden="true"></canvas>
+
+    <svg class="chain-svg" data-chain aria-hidden="true">
+      <path class="chain-ghost" data-chain-ghost d=""/>
+      <path class="chain-gold" data-chain-gold d=""/>
+      <path class="chain-links" data-chain-links d=""/>
+      <g data-beads></g>
+    </svg>
+    <ol class="beads" data-bead-labels aria-hidden="true">
+      <li><b>758</b> Madinah</li>
+      <li><b>892</b> Tirmidh</li>
+      <li><b>1111</b> Tus</li>
+      <li><b>1277</b> Nawa</li>
+      <li><b>Today</b> Tarim</li>
+      <li class="beads-you">you, in Kuala Lumpur</li>
+    </ol>
+
+    <div class="lead" data-lead>
+      <h1 class="lead-h"><span class="ln"><span>Reviving the Islamic</span></span> <span class="ln"><span>scholarly tradition.</span></span> <span class="ln"><span class="lead-since">Since 2007.</span></span></h1>
+      <p class="lead-p">From the 8th century to today, in English and Bahasa Melayu.</p>
+      <a class="cta" href="shop.html" data-cta><span>Find your first book</span><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6h26M21 1l5 5-5 5"/></svg></a>
+    </div>
+
+    <aside class="chap" data-chap aria-live="polite">
+      <p class="stage-ar" lang="ar" dir="rtl" data-ar>موسى بن عقبة</p>
+      <p class="chap-when"><span data-c-year>758</span> · <span data-c-who>Musa ibn ‘Uqbah</span></p>
+      <p class="chap-line" data-c-line>The earliest available work of Sīrah in existence.</p>
+      <a class="chap-book" data-c-link href="product.html?id=maghazi-of-sayyiduna-muhammad-gold-premium">
+        <span class="chap-title" data-c-title>The Maghāzī of Sayyidunā Muhammad ﷺ</span>
+        <span class="chap-meta"><span data-c-ed>Gold Premium hardback</span> · <b data-c-price>RM220</b></span>
+      </a>
+    </aside>
+
+    <p class="stage-cue" data-cue aria-hidden="true"><span></span>Scroll through the centuries</p>
+  </div>
+</section>
+
+<div class="below">
+<!-- What we publish: six subjects with live counts -->
+<section class="sec subjects" id="subjects">
+  <div class="link-bead" aria-hidden="true"></div>
+  <header class="sec-h">
+    <h2>What we publish</h2>
+    <p>Reviving, translating &amp; beautifully producing works of scholarship. <b data-count="all">101</b> titles, from RM25.</p>
+  </header>
+  <ol class="subj" data-subjects></ol>
+  <p class="subj-also"><a href="shop.html?lang=Bahasa%20Melayu" lang="ms"><b data-count="bm">10</b> buku Bahasa Melayu</a><a href="ebooks.html"><b data-count="free">9</b> free ebooks</a><a href="shop.html?cat=Family%20%26%20Character"><b data-count="family">7</b> for family &amp; character</a><span>Arabic beside English: the IGP bilingual edition</span></p>
+</section>
+
+<!-- Signature: the century bar. The catalogue placed by its author's century, spines standing on a gold line. -->
+<section class="sec cent" id="centuries" data-cent>
+  <div class="cent-pin" data-cent-pin>
+    <header class="cent-h">
+      <div>
+        <h2>The century bar</h2>
+        <p>Every book stands where its author lived. Pull one out.</p>
+      </div>
+      <ol class="cent-seg" data-cent-seg aria-hidden="true"></ol>
+    </header>
+    <div class="cent-view"><div class="cent-track" data-cent-track></div></div>
+  </div>
+</section>
+
+<!-- The people -->
+<section class="sec people" id="people">
+  <div class="link-bead" aria-hidden="true"></div>
+  <header class="sec-h">
+    <h2>Who you are reading</h2>
+    <p>Named classical authors, living teachers and the translators who carry their words into English.</p>
+  </header>
+  <div class="ppl">
+    <div class="ppl-col">
+      <h3>The classical authors</h3>
+      <ul class="ppl-list" data-people="classical"></ul>
+    </div>
+    <div class="ppl-col">
+      <h3>Teachers today</h3>
+      <ul class="ppl-list ppl-list--now" data-people="today"></ul>
+      <h3>Translators</h3>
+      <p class="ppl-tr">Shabbir Hassan · Rayyan Shaikh · Talut Dawood · Moustafa Elqabbany · Abdul Aziz Suraqah · Mohammed Aslam · Abdullah Salih</p>
+    </div>
+  </div>
+</section>
+
+<!-- Best sellers with prices -->
+<section class="sec best" id="best">
+  <div class="link-bead" aria-hidden="true"></div>
+  <header class="sec-h sec-h--row">
+    <div><h2>Most loved, with prices</h2>
+    <p>Gold, leather and hardback editions, and the paperbacks readers give most. Secure checkout in RM on imamghazali.my.</p></div>
+    <a class="ln-btn" href="shop.html">All 101 titles <svg viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6h26M21 1l5 5-5 5"/></svg></a>
+  </header>
+  <div class="shelf" data-best></div>
+</section>
+
+<!-- Tool: reading path -->
+<section class="sec path" id="path" data-path>
+  <div class="link-bead" aria-hidden="true"></div>
+  <div class="path-in">
+    <div class="path-form">
+      <h2>Your reading path</h2>
+      <p>Tell us where you are. We'll lay three books in order, and you can take all three at once.</p>
+      <p class="path-q">I am</p>
+      <div class="seg" role="radiogroup" aria-label="Your level" data-path-level>
+        <button type="button" role="radio" aria-checked="true" data-v="new">New to reading</button>
+        <button type="button" role="radio" aria-checked="false" data-v="steady">A steady reader</button>
+        <button type="button" role="radio" aria-checked="false" data-v="student">A student of knowledge</button>
+      </div>
+      <p class="path-q">and I want</p>
+      <div class="seg seg--wrap" role="radiogroup" aria-label="Subject" data-path-subj>
+        <button type="button" role="radio" aria-checked="true" data-v="Sīrah &amp; the Prophet ﷺ">the Prophet ﷺ</button>
+        <button type="button" role="radio" aria-checked="false" data-v="Hadith">Hadith</button>
+        <button type="button" role="radio" aria-checked="false" data-v="Spirituality &amp; Belief">the heart &amp; belief</button>
+        <button type="button" role="radio" aria-checked="false" data-v="Qur'an">the Qur'an</button>
+        <button type="button" role="radio" aria-checked="false" data-v="Life &amp; Seasons">life &amp; seasons</button>
+        <button type="button" role="radio" aria-checked="false" data-v="bm" lang="ms">Bahasa Melayu</button>
+      </div>
+    </div>
+    <div class="path-out" aria-live="polite">
+      <svg class="path-chain" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M10 20 Q155 34 300 20 T590 20"/></svg>
+      <ol class="path-books" data-path-books></ol>
+      <div class="path-total">
+        <p><span>Three books</span> <b data-path-total>RM0</b></p>
+        <button class="cta" type="button" data-path-add data-add-to-cart data-open-cart data-set-name="Your reading path"><span>Add all three to my book bag</span><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6h26M21 1l5 5-5 5"/></svg></button>
+        <a class="ln-btn" data-path-wa href="#" target="_blank" rel="noopener">Or send this path on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Classes in KL -->
+<section class="sec klass" id="classes">
+  <div class="link-bead" aria-hidden="true"></div>
+  <div class="klass-in" data-klass></div>
+</section>
+
+<!-- Review + since 2007 -->
+<section class="sec rev" id="review">
+  <div class="link-bead" aria-hidden="true"></div>
+  <div class="rev-in">
+    <div class="rev-year" aria-hidden="true"><span data-since>2007</span></div>
+    <figure class="rev-q">
+      <blockquote><p>“This book is truly amazing. The level of thought and care is inspiring. The Arabic is based on the best edition recommended by scholars in Egypt. The English translation is masterful. The designs are beautiful and the footnotes add a lot to the text. It's a must-have.”</p></blockquote>
+      <figcaption>A reader of <a href="product.html?id=al-shamail-al-muhammadiyya">al-Shamā'il al-Muhammadiyya</a> <span class="tbc">[reviewer name to confirm]</span></figcaption>
+    </figure>
+    <ul class="rev-facts">
+      <li><b>Since 2007</b> Leading the effort to revive the vast and rich Islamic scholarly tradition.</li>
+      <li><b>In English for the first time</b> Mukhtasar Sahih al-Bukhari, and the Maghazi, the earliest Sīrah in existence.</li>
+      <li><b>Now in Malaysia</b> <span><span data-site="company">IGP MY · SSM 202401032039 (1577888-V)</span>. Prices in RM.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faqs" id="faq">
+  <div class="link-bead" aria-hidden="true"></div>
+  <div class="faqs-in">
+    <header class="sec-h"><h2>Before you order</h2><p>Still unsure? <a data-wa="Salam {brand}, I have a question: " href="#" target="_blank" rel="noopener">Ask us on WhatsApp</a>.</p></header>
+    <div class="faq-list">
+      <details><summary>How do I pay and check out?</summary><p>Add books to your book bag, then check out securely in RM on imamghazali.my. Or send the bag to us on WhatsApp and we'll arrange it with you.</p></details>
+      <details><summary>Where do you deliver, and how long does it take?</summary><p>We ship within Malaysia from Kuala Lumpur. Delivery fees and times show at checkout <span class="tbc">[client to confirm]</span>.</p></details>
+      <details><summary>Who translates the books?</summary><p>Named translators working from the best Arabic editions, many with forewords by living teachers, such as Shaykh Abdullah Anik Misra for the 40 Hadith. Most editions set the Arabic beside the English.</p></details>
+      <details><summary>Do you have books in Bahasa Melayu?</summary><p lang="ms">Ya. Sepuluh judul, dari Pembukaan Tanpa Akhir (RM60) dan Selawat Cinta untuk Baginda ﷺ (RM30) hingga Penawar Lupa, Seni Keibubapaan dan Panduan Adab (RM25 setiap satu).</p></details>
+      <details><summary>When does al-Shamā'il ship?</summary><p>The hardback (RM200) is on pre-order for the December 2026 print batch.</p></details>
+      <details><summary>Can a masjid or bookshop buy in bulk?</summary><p>Yes. <a href="contact.html?for=Wholesale%20for%20a%20masjid%20or%20bookshop">Ask about wholesale</a>; terms <span class="tbc">[client to confirm]</span>.</p></details>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<footer class="ft">
+  <div class="ft-call">
+    <svg class="ft-chain" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q300 52 600 30 T1200 30"/></svg>
+    <p class="ft-ar" lang="ar" dir="rtl" aria-hidden="true">سلسلة العلم</p>
+    <h2 class="ft-h">The chain reaches you, in Kuala Lumpur.</h2>
+    <div class="ft-acts">
+      <a class="cta" href="shop.html"><span>Find your first book</span><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6h26M21 1l5 5-5 5"/></svg></a>
+      <a class="ln-btn" data-wa="Salam {brand}, I'd like to order: " href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+  </div>
+  <div class="ft-cols">
+    <div class="ft-brand"><img src="assets/img/logo.png" alt="Imam Ghazali Publishing" width="973" height="587" loading="lazy"><p>Reviving, translating &amp; beautifully producing works of scholarship. Since 2007, now in Malaysia.</p></div>
+    <div><h3>Bookstore</h3><ul>
+      <li><a href="shop.html">All 101 titles</a></li>
+      <li><a href="shop.html?cat=S%C4%ABrah%20%26%20the%20Prophet%20%EF%B7%BA">Sīrah &amp; the Prophet ﷺ</a></li>
+      <li><a href="shop.html?cat=Hadith">Hadith</a></li>
+      <li><a href="shop.html?lang=Bahasa%20Melayu" lang="ms">Buku Bahasa Melayu</a></li>
+      <li><a href="ebooks.html">Nine free ebooks</a></li>
+    </ul></div>
+    <div><h3>IGP MY</h3><ul>
+      <li><a href="about.html">About &amp; how a book is made</a></li>
+      <li><a href="classes.html">Classes in Kuala Lumpur</a></li>
+      <li><a href="contact.html">Contact &amp; where to buy</a></li>
+      <li><a href="contact.html?for=Wholesale%20for%20a%20masjid%20or%20bookshop">Wholesale</a></li>
+    </ul></div>
+    <div><h3>Talk to us</h3><ul>
+      <li><a data-wa="Salam {brand}, " href="#" target="_blank" rel="noopener">WhatsApp <span data-site="whatsapp"></span></a></li>
+      <li><a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram @imamghazali.my</a></li>
+      <li><a data-shop="/collections/bookstore" href="#" target="_blank" rel="noopener">Checkout on imamghazali.my</a></li>
+    </ul></div>
+  </div>
+  <p class="ft-fine">&copy; <span data-site="brand">Imam Ghazali Publishing</span> · <span data-site="company"></span> · Prices in RM</p>
+</footer>
+
+</body>
+</html>
