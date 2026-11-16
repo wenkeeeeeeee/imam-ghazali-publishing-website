@@ -183,16 +183,18 @@ function init() {
 
     // lamp position
     if (!S.opening) {
-      const live = now - pointer.t < 2600 && S.p < 0.8;
+      const mouse = fine && pointer.t > 0;
+      const live = mouse || (now - pointer.t < 2600 && S.p < 0.8);
       const [tx, ty] = live ? [pointer.x, pointer.y] : scripted(reduce ? 0 : t);
-      const k = live ? 0.24 : 0.07;
+      const k = mouse ? 0.35 : live ? 0.24 : 0.07;
       S.x += (tx - S.x) * k; S.y += (ty - S.y) * k;
     }
     const flick = reduce ? 1 : 1 + 0.05 * Math.sin(t * 13.1) + 0.035 * Math.sin(t * 7.3 + 1.2) + 0.025 * Math.sin(t * 23.7);
     const lit = S.open * (1 - S.day);
     const fs = S.scale * mix(1, 0.4, S.day);
     flameEl.style.transform = `translate3d(${S.x}px, ${S.y}px, 0) scale(${fs})`;
-    flameEl.style.opacity = String(Math.max(0, 1 - S.day * 1.1));
+    // With a mouse the cursor flame is the only flame on screen; the scene keeps its light. Phones keep this flame.
+    flameEl.style.opacity = (fine && !S.opening) ? '0' : String(Math.max(0, 1 - S.day * 1.1));
     if (!reduce) flameSvg.style.transform = `scale(${1 + 0.035 * Math.sin(t * 9.7)}, ${1 + 0.06 * Math.sin(t * 6.1 + 0.6) + 0.03 * Math.sin(t * 17.3)}) skewX(${Math.sin(t * 2.3) * 2.2}deg)`;
 
     const owns = stage.getBoundingClientRect().bottom > innerHeight * 0.35;

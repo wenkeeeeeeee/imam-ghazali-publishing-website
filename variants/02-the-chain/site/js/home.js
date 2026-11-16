@@ -10,10 +10,15 @@ const price = (p) => (p.free ? 'Free ebook' : money(p.sizes[0].price));
 // ---------- Counters that roll when seen ----------
 function roll(el, to, dur = 1400, from = 0) {
   if (reduce) { el.textContent = to; return; }
+  // Lock the box to the final number's width so the layout around it never moves while it rolls.
+  el.style.display = 'inline-block';
+  el.style.minWidth = `${String(Math.max(Math.abs(to), Math.abs(from))).length}ch`;
   const t0 = performance.now();
+  let last = '';
   const step = (now) => {
     const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-    el.textContent = Math.round(from + (to - from) * e);
+    const v = String(Math.round(from + (to - from) * e));
+    if (v !== last) { el.textContent = v; last = v; }
     if (k < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
@@ -233,3 +238,10 @@ if (track) {
   }
   update(0);
 }
+
+// Lock every rolling number to its final width at load, so the row never moves when the roll starts.
+document.querySelectorAll('[data-roll]').forEach((el) => {
+  const to = el.dataset.roll, from = el.dataset.from || '0';
+  el.style.display = 'inline-block';
+  el.style.minWidth = `${Math.max(String(to).length, String(from).length)}ch`;
+});

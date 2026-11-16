@@ -307,7 +307,8 @@ function init() {
     const k = fr < 0.2 ? 0 : fr > 0.8 ? 1 : ((fr - 0.2) / 0.6);
     const ek = k * k * (3 - 2 * k);
     const yr = Math.round(a.year + (b.year - a.year) * (reduce ? Math.round(fr) : ek));
-    yearEl.textContent = (f >= C.length - 1 - 0.01) ? 'Today' : yr;
+    const yrText = (f >= C.length - 1 - 0.01) ? 'Today' : String(yr);
+    if (yearEl.textContent !== yrText) yearEl.textContent = yrText; // only touch the text when it changes
     showChapter(held);
     // Century bar and chain.
     segs.forEach((li, i) => {

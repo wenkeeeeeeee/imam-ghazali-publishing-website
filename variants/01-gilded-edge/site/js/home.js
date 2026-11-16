@@ -129,3 +129,11 @@ if (crosser && !reduce) {
   };
   addEventListener('scroll', upd, { passive: true }); upd();
 }
+
+// Rolling counters keep the final number's width and equal-width digits, so nothing around them shifts as they roll.
+document.querySelectorAll('[data-count]').forEach((el) => {
+  if (!/^\d+$/.test(el.dataset.count || '')) return; // only numeric counters
+  el.style.display = 'inline-block';
+  el.style.fontVariantNumeric = 'tabular-nums lining-nums';
+  el.style.minWidth = `${String(el.dataset.count || el.textContent).replace(/\D/g, '').length || 1}ch`;
+});

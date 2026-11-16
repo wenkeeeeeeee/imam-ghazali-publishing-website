@@ -391,3 +391,8 @@ section:has(> [data-events="upcoming"]) > h2 { grid-column: 1 / -1; }
 .chain .split img { max-height: calc(100vh - var(--top) - 120px); width: 100%; object-fit: cover; }
 .chain .card-name a, .bk-name a { display: inline-block; padding: 4px 0; }
 @media (max-width: 800px) { .path-chain { display: none; } }
+
+/* Rolling numbers: equal-width digits, so a counter or the giant year never changes width (and shakes the layout)
+   as it rolls. */
+[data-roll], [data-year], .stage-year, .kl-day { font-variant-numeric: tabular-nums lining-nums; }
+.kl-day { text-align: center; }

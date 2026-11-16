@@ -58,7 +58,7 @@ main > section.hero { display: block; position: relative; height: 400vh; height:
 
 .stage-year { position: absolute; z-index: 1; left: 0; right: 0; top: calc(var(--top) + 2vh); text-align: center; pointer-events: none;
   font: 400 min(58vh, 30vw)/1 var(--f-read); letter-spacing: -.035em; color: rgba(237,230,214,.10); -webkit-text-stroke: 1.5px rgba(216,168,0,.42); text-shadow: 0 0 60px rgba(19,149,143,.25);
-  font-variant-numeric: lining-nums; }
+  font-variant-numeric: tabular-nums lining-nums; }
 .stage-year span { display: inline-block; }
 .stage-ar { margin: 0 0 6px; white-space: nowrap; font: 700 clamp(36px, 3.8vw, 68px)/1.25 var(--f-ar); color: var(--gold); transition: opacity .6s var(--ease), transform .8s var(--ease); }
 .stage-ar.is-out { opacity: 0; transform: translateY(14px); }

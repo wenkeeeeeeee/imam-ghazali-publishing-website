@@ -52,13 +52,12 @@ if (fine && !reduce) {
   document.body.append(c);
   html.classList.add('flame-cursor');
   let x = -100, y = -100, tx = -100, ty = -100, on = false;
-  // Hide this flame only while the pointer is over a stage that draws its own lamp. Re-checked on scroll too,
-  // so wheeling out of a stage without moving the mouse never leaves the page with no pointer.
-  const OWN = '.gl-on [data-stage], .has-gl [data-shelf-stage]';
+  // The flame is the only pointer everywhere, the hero and lamp shelf included (their light follows it). It steps
+  // aside only in text fields, where the caret shows. Re-checked on scroll as well as on mouse move.
   const TEXT = 'input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]), textarea';
   const HOT = 'a[href], button, summary, label, select, [role="option"], [role="button"], [data-add-to-cart]';
   const check = (target) => {
-    c.classList.toggle('is-off', !!(target?.closest?.(OWN) || target?.closest?.(TEXT)));
+    c.classList.toggle('is-off', !!target?.closest?.(TEXT));
     c.classList.toggle('is-hot', !!target?.closest?.(HOT));
   };
   addEventListener('pointermove', (e) => {
@@ -109,4 +108,12 @@ if (veil && !reduce) {
 document.querySelectorAll('[data-ph]').forEach((ph) => {
   const light = ph.querySelector('.ph-light');
   ph.addEventListener('pointermove', (e) => { const r = ph.getBoundingClientRect(); light.style.setProperty('--mx', `${e.clientX - r.left}px`); light.style.setProperty('--my', `${e.clientY - r.top}px`); });
+});
+
+// Rolling counters keep the final number's width and equal-width digits, so nothing around them shifts as they roll.
+document.querySelectorAll('[data-count]').forEach((el) => {
+  if (!/^\d+$/.test(el.dataset.count || '')) return; // only numeric counters
+  el.style.display = 'inline-block';
+  el.style.fontVariantNumeric = 'tabular-nums lining-nums';
+  el.style.minWidth = `${String(el.dataset.count || el.textContent).replace(/\D/g, '').length || 1}ch`;
 });

@@ -649,3 +649,5 @@ main:has(> section:last-child[data-tone="day"]) + .foot { background: linear-gra
 .block-night .card-line { display: none; } .block-night .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 @media (max-height: 760px) and (min-width: 761px) { .block-night .card-media img { max-height: 230px; margin: 0 auto; width: auto; } .pdp-gallery img { width: 56px; height: 56px; } .buy { margin-top: 16px; } .pdp-price { margin-top: 14px; } }
 @media (max-height: 760px) and (min-width: 761px) { .pdp { padding-top: calc(var(--head-h) + 2vh); padding-bottom: 3vh; } .pdp-stage { width: min(100%, 52vh); } .block-night .card-media img { max-height: 200px; } .pdp-links { margin-top: 12px; } .pdp-terms { margin-top: 8px; } }
+/* With a mouse, the cursor flame is the only flame: the lamp shelf keeps its light, never its own flame. */
+@media (hover: hover) and (pointer: fine) { .ls-flame { opacity: 0 !important; } }
