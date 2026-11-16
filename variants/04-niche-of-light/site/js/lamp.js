@@ -12,6 +12,7 @@ function setTone() {
   let tone = 'night';
   for (const el of toned) { const r = el.getBoundingClientRect(); if (r.top <= y && r.bottom > y) { tone = el.dataset.tone; break; } }
   head?.classList.toggle('is-day', tone === 'day');
+  head?.classList.toggle('is-solid', scrollY > 40);
   requestAnimationFrame(setTone);
 }
 if (head) requestAnimationFrame(setTone);
@@ -54,7 +55,12 @@ if (fine && !reduce) {
   // Hide this flame only while the pointer is over a stage that draws its own lamp. Re-checked on scroll too,
   // so wheeling out of a stage without moving the mouse never leaves the page with no pointer.
   const OWN = '.gl-on [data-stage], .has-gl [data-shelf-stage]';
-  const check = (target) => { c.classList.toggle('is-off', !!target?.closest?.(OWN)); };
+  const TEXT = 'input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]), textarea';
+  const HOT = 'a[href], button, summary, label, select, [role="option"], [role="button"], [data-add-to-cart]';
+  const check = (target) => {
+    c.classList.toggle('is-off', !!(target?.closest?.(OWN) || target?.closest?.(TEXT)));
+    c.classList.toggle('is-hot', !!target?.closest?.(HOT));
+  };
   addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
     tx = e.clientX; ty = e.clientY;
