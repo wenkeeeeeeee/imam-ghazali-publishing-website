@@ -51,14 +51,24 @@ if (fine && !reduce) {
   document.body.append(c);
   html.classList.add('flame-cursor');
   let x = -100, y = -100, tx = -100, ty = -100, on = false;
+  // Hide this flame only while the pointer is over a stage that draws its own lamp. Re-checked on scroll too,
+  // so wheeling out of a stage without moving the mouse never leaves the page with no pointer.
+  const OWN = '.gl-on [data-stage], .has-gl [data-shelf-stage]';
+  const check = (target) => { c.classList.toggle('is-off', !!target?.closest?.(OWN)); };
   addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
     tx = e.clientX; ty = e.clientY;
-    const own = e.target.closest?.('.gl-on [data-stage], .has-gl [data-shelf-stage]');
-    c.classList.toggle('is-off', !!own);
-    if (!on) { x = tx; y = ty; on = true; c.classList.add('is-on'); }
+    check(e.target);
+    if (!on) { x = tx; y = ty; on = true; }
+    c.classList.add('is-on');
   }, { passive: true });
-  document.addEventListener('pointerleave', () => c.classList.remove('is-on'));
+  let queued = false;
+  addEventListener('scroll', () => {
+    if (!on || queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; check(document.elementFromPoint(tx, ty)); });
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', () => c.classList.remove('is-on'));
   const t0 = performance.now();
   (function loop(now) {
     x += (tx - x) * 0.35; y += (ty - y) * 0.35;
