@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>IGP's bookstore | Imam Ghazali Publishing Malaysia</title>
+<meta name="description" content="Walk into IGP's bookstore: 101 Islamic titles in English, Bahasa Melayu & Arabic, from RM25. Bilingual and premium editions, free ebooks and classes in Kuala Lumpur.">
+<meta property="og:title" content="IGP's bookstore | Imam Ghazali Publishing Malaysia">
+<meta property="og:description" content="Walk the shelves: 101 titles in English, Bahasa Melayu & Arabic, from RM25.">
+<meta property="og:image" content="https://imam-ghazali-publishing-website.vercel.app/variants/05-virtual-bookstore/site/assets/og.jpg">
+<meta name="theme-color" content="#FBF8F2">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preload" href="assets/fonts/gambetta-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/general-sans-500.woff2" as="font" type="font/woff2" crossorigin>
+<script src="js/gl-guard.js"></script>
+<link rel="stylesheet" href="css/site.css">
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/pages.js"></script>
+<script type="module" src="js/home.js"></script>
+</head>
+<body data-page="home" class="home">
+<a class="skip" href="#places">Skip to the list of places</a>
+<header class="head">
+  <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="Imam Ghazali Publishing" width="73" height="44"></a>
+  <nav class="nav" data-nav aria-label="Main"><a href="shop.html">Bookstore</a><a href="ebooks.html">Ebooks</a><a href="classes.html">Classes</a><a href="about.html">About</a></nav>
+  <div class="head-actions">
+    <button class="bag-btn" type="button" data-cart-open aria-label="Open book bag">Book bag <span class="bag-n" data-cart-count>0</span></button>
+    <button class="menu-btn" type="button" data-menu-btn aria-expanded="false">Menu</button>
+  </div>
+</header>
+<main id="main">
+<section class="store" data-store aria-label="IGP's bookstore">
+  <img class="store-still" src="assets/img/store-still.webp" alt="Inside IGP's bookstore: oak shelves of book covers under brass lamps, a front table of premium editions and sunlight from the window" width="1920" height="1080">
+  <canvas class="store-gl" data-gl aria-hidden="true"></canvas>
+  <div class="intro" data-intro>
+    <h1 class="intro-h"><span class="ln"><span>Welcome to</span></span> <span class="ln"><span>IGP's bookstore.</span></span></h1>
+    <p class="intro-p">Walk the shelves: 101 titles in English, Bahasa Melayu &amp; Arabic, from RM25.</p>
+    <div class="intro-cta">
+      <button class="btn btn-big" type="button" data-enter>Enter the bookstore</button>
+      <a class="btn btn-ghost btn-big" href="shop.html">Browse the list</a>
+    </div>
+    <button class="intro-anyway" type="button" data-anyway hidden>Walk in anyway (3D)</button>
+    <p class="intro-fine">Reviving, translating &amp; beautifully producing works of scholarship · Since 2007, now in Malaysia</p>
+  </div>
+
+  <div class="hud" data-hud hidden>
+    <div class="hud-where" aria-live="polite"><p class="hud-kind" data-hud-kind>Entrance</p><p class="hud-name" data-hud-name>The door</p><p class="hud-meta" data-hud-meta></p></div>
+    <div class="hud-map">
+      <svg data-map viewBox="-7.6 -0.6 15.2 22.2" role="group" aria-label="Floor plan: choose a place to walk to"></svg>
+      <button class="hud-places-btn" type="button" data-places-btn aria-expanded="false">All places</button>
+      <ol class="hud-list" data-hud-list hidden></ol>
+    </div>
+    <p class="hud-keys" data-keys><span><kbd>Mouse</kbd> look</span><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span><kbd>Click</kbd> take a book</span><span><kbd>E</kbd> put back</span><span><kbd>N</kbd> next aisle</span><span><kbd>Esc</kbd> free the mouse</span></p>
+    <p class="hud-keys hud-keys-touch"><span>Drag to look</span><span>Stick or tap the floor to walk</span><span>Tap a book to take it</span></p>
+    <div class="hud-act">
+      <a class="hud-skip" href="shop.html">Skip to the bookstore</a>
+      <button class="btn" type="button" data-next>Next aisle <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="reticle" data-reticle><i></i><span data-reticle-label></span></div>
+    <p class="hud-hint" data-hint hidden>Click the store to walk · <kbd>Esc</kbd> frees the mouse</p>
+    <div class="joy" data-joy aria-hidden="true"><span></span></div>
+  </div>
+
+  <aside class="take" data-take hidden aria-live="polite" aria-label="The book you took">
+    <p class="take-cat" data-take-cat></p>
+    <h2 class="take-title" data-take-title></h2>
+    <p class="take-author" data-take-author></p>
+    <p class="take-format" data-take-format></p>
+    <p class="take-price" data-take-price></p>
+    <p class="take-line" data-take-line></p>
+    <div class="take-actions" data-take-actions></div>
+    <button class="take-back" type="button" data-take-back><kbd>E</kbd> Put it back</button>
+  </aside>
+
+  <aside class="panel" data-panel hidden role="dialog" aria-modal="false" aria-labelledby="panel-title">
+    <button class="panel-close" type="button" data-panel-close aria-label="Close">×</button>
+    <div class="panel-body" data-panel-body></div>
+  </aside>
+</section>
+
+<div class="places" id="places" data-places></div>
+</main>
+<footer class="foot">
+  <div class="foot-cols">
+    <div><img class="foot-logo" src="assets/img/logo.png" alt="Imam Ghazali Publishing" width="120" height="72" loading="lazy"><p data-site="tagline"></p><p class="foot-small" data-site="company"></p></div>
+    <div><h2>Bookstore</h2><ul>
+      <li><a href="shop.html">All 101 titles</a></li>
+      <li><a href="shop.html?cat=S%C4%ABrah%20%26%20the%20Prophet%20%EF%B7%BA">Sīrah &amp; the Prophet ﷺ</a></li>
+      <li><a href="shop.html?cat=Hadith">Hadith</a></li>
+      <li><a href="shop.html?cat=Qur'an">Qur'an</a></li>
+      <li><a href="shop.html?lang=Bahasa%20Melayu">Buku Bahasa Melayu</a></li>
+      <li><a href="ebooks.html">Free ebooks</a></li>
+    </ul></div>
+    <div><h2>IGP MY</h2><ul><li><a href="about.html">About &amp; the scholars</a></li><li><a href="classes.html">Classes in KL</a></li><li><a href="contact.html">Contact &amp; where to buy</a></li><li><a href="contact.html?for=Wholesale%20for%20a%20masjid%20or%20bookshop">Wholesale</a></li></ul></div>
+    <div><h2>Talk to us</h2><ul>
+      <li><a data-wa="Salam {brand}, " href="#" target="_blank" rel="noopener">WhatsApp <span data-site="whatsapp"></span></a></li>
+      <li><a data-social="instagram" href="#" target="_blank" rel="noopener">Instagram @imamghazali.my</a></li>
+      <li><a data-shop="/collections/bookstore" href="#" target="_blank" rel="noopener">Checkout on imamghazali.my</a></li>
+    </ul></div>
+  </div>
+  <p class="foot-fine">&copy; <span data-site="brand">Imam Ghazali Publishing</span> · <span data-site="address"></span></p>
+</footer>
+</body>
+</html>
