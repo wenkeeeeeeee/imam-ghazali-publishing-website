@@ -11,4 +11,4 @@ Each is a working bookstore: 101 titles in RM, a book bag that checks out on ima
 
 **Run locally:** `python serve.py . 8080` (or any static server with byte-range support) in this folder, then open http://127.0.0.1:8080/ for the hub page.
 
-Static HTML, CSS and vanilla JS: no build step. `content/` holds the client data, `variants/_shared/` the shared pieces, `docs/` the brief.
+Static HTML, CSS and vanilla JS: no build step. Each variant folder is a complete site.
